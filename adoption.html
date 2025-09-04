@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏠 Усыновление котиков - Котики Радуги</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Нян-кеты, вылетающие из экрана -->
+    <div class="nyan-cats-container" id="nyanCatsContainer"></div>
+    
+    <!-- Лапки, вылезающие с боков -->
+    <div class="paws-container" id="pawsContainer"></div>
+    
+    <!-- Радужные частицы -->
+    <div class="rainbow-particles" id="rainbowParticles"></div>
+    
+    <!-- Блестки -->
+    <div class="sparkles" id="sparkles"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🌈 Котики Радуги 🐱</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="gallery.html" class="nav-link">Галерея</a></li>
+                <li><a href="adoption.html" class="nav-link active">Усыновление</a></li>
+                <li><a href="care.html" class="nav-link">Уход</a></li>
+                <li><a href="contact.html" class="nav-link">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="padding-top: 120px;">
+        <section class="hero" style="min-height: 60vh;">
+            <div class="hero-bg">
+                <img src="https://cataas.com/cat/says/Adopt%20Me?width=1200&height=400&fontSize=50&fontColor=white" alt="Adoption Hero" onerror="this.src='https://placekitten.com/1200/401'">
+            </div>
+            <div class="hero-content">
+                <h1 class="rainbow-text">Усыновите котика! 🏠</h1>
+                <p class="hero-subtitle">Подарите пушистому другу дом, полный любви и заботы</p>
+            </div>
+        </section>
+
+        <section class="adoption-info">
+            <div class="container">
+                <h2 class="section-title">Процесс усыновления</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3>1. Заполните анкету</h3>
+                        <p>Расскажите о себе и своих предпочтениях. Это поможет нам подобрать идеального котика!</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>2. Знакомство</h3>
+                        <p>Приезжайте к нам в гости и познакомьтесь с котиками лично.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏡</div>
+                        <h3>3. Подготовка дома</h3>
+                        <p>Мы поможем подготовить ваш дом к приему нового жильца.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💖</div>
+                        <h3>4. Счастливая жизнь</h3>
+                        <p>Начните новую главу жизни вместе с пушистым другом!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="adoption-form">
+            <div class="container">
+                <h2 class="section-title">Анкета на усыновление</h2>
+                <div class="form-container">
+                    <form id="adoptionForm">
+                        <div class="form-group">
+                            <label for="fullName">Полное имя *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">Возраст *</label>
+                            <input type="number" id="age" name="age" min="18" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Телефон *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Адрес проживания *</label>
+                            <textarea id="address" name="address" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="housing">Тип жилья *</label>
+                            <select id="housing" name="housing" required>
+                                <option value="">Выберите тип жилья</option>
+                                <option value="apartment">Квартира</option>
+                                <option value="house">Дом</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">Опыт содержания котов *</label>
+                            <select id="experience" name="experience" required>
+                                <option value="">Выберите ваш опыт</option>
+                                <option value="none">Никогда не держал котов</option>
+                                <option value="some">Есть небольшой опыт</option>
+                                <option value="experienced">Опытный кошатник</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="catPreference">Какого котика хотели бы усыновить?</label>
+                            <select id="catPreference" name="catPreference">
+                                <option value="">Любого</option>
+                                <option value="young">Котенка (до 1 года)</option>
+                                <option value="adult">Взрослого кота (1-7 лет)</option>
+                                <option value="senior">Пожилого кота (7+ лет)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="personality">Предпочтения по характеру</label>
+                            <textarea id="personality" name="personality" rows="3" placeholder="Расскажите, какой характер кота вам больше подходит..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="otherPets">Есть ли другие животные дома?</label>
+                            <textarea id="otherPets" name="otherPets" rows="2" placeholder="Если да, то какие и сколько..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="children">Есть ли дети в семье?</label>
+                            <select id="children" name="children">
+                                <option value="no">Нет детей</option>
+                                <option value="young">Дети до 5 лет</option>
+                                <option value="school">Школьники</option>
+                                <option value="teen">Подростки</option>
+                                <option value="mixed">Дети разного возраста</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reason">Почему хотите завести кота? *</label>
+                            <textarea id="reason" name="reason" rows="4" required placeholder="Расскажите о ваших мотивах..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="care">Как планируете заботиться о коте?</label>
+                            <textarea id="care" name="care" rows="4" placeholder="Расскажите о ваших планах по уходу, кормлению, ветеринарному обслуживанию..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emergency">Контакт на случай чрезвычайной ситуации</label>
+                            <input type="text" id="emergency" name="emergency" placeholder="ФИО и телефон близкого человека">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="additional">Дополнительная информация</label>
+                            <textarea id="additional" name="additional" rows="3" placeholder="Что еще вы хотели бы нам рассказать?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="display: flex; align-items: center; gap: 10px;">
+                                <input type="checkbox" required>
+                                Я согласен(-на) с условиями усыновления и готов(-а) обеспечить коту любящий дом *
+                            </label>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <button type="submit" class="btn btn-large">Отправить анкету 💖</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="adoption-requirements">
+            <div class="container">
+                <h2 class="section-title">Требования для усыновления</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔞</div>
+                        <h3>Возраст 18+</h3>
+                        <p>Усыновитель должен быть совершеннолетним или иметь согласие родителей</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏠</div>
+                        <h3>Собственное жилье</h3>
+                        <p>Стабильное место жительства, где разрешено содержание животных</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>Финансовые возможности</h3>
+                        <p>Способность обеспечить кота кормом, игрушками и ветеринарным уходом</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">❤️</div>
+                        <h3>Любовь и забота</h3>
+                        <p>Готовность дарить коту внимание, любовь и заботу на протяжении всей его жизни</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌈 Котики Радуги</h3>
+                    <p>Мы помогаем котикам найти любящие семьи уже более 5 лет!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="gallery.html">Галерея</a></li>
+                        <li><a href="adoption.html">Усыновление</a></li>
+                        <li><a href="care.html">Уход за котиками</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>📧 info@kotkidugi.ru</p>
+                    <p>📱 +7 (123) 456-78-90</p>
+                    <p>📍 Москва, ул. Котячья, 123</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Котики Радуги. Все права защищены. Сделано с 💖 для котиков!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('adoptionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Анимация отправки
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '⏳ Отправляем...';
+            submitBtn.disabled = true;
+            
+            // Имитация отправки
+            setTimeout(() => {
+                submitBtn.innerHTML = '✅ Анкета отправлена!';
+                submitBtn.style.background = 'linear-gradient(45deg, #6bcf7f, #4d79ff)';
+                
+                // Показать сообщение об успехе
+                alert('🎉 Спасибо! Ваша анкета отправлена. Мы свяжемся с вами в ближайшее время!');
+                
+                // Сброс формы
+                setTimeout(() => {
+                    e.target.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                }, 3000);
+            }, 2000);
+        });
+    </script>
+    
+    <script src="nyan-effects.js"></script>
+</body>
+</html>

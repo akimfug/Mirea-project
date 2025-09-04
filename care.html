@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐾 Уход за котиками - Котики Радуги</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Нян-кеты, вылетающие из экрана -->
+    <div class="nyan-cats-container" id="nyanCatsContainer"></div>
+    
+    <!-- Лапки, вылезающие с боков -->
+    <div class="paws-container" id="pawsContainer"></div>
+    
+    <!-- Радужные частицы -->
+    <div class="rainbow-particles" id="rainbowParticles"></div>
+    
+    <!-- Блестки -->
+    <div class="sparkles" id="sparkles"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🌈 Котики Радуги 🐱</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="gallery.html" class="nav-link">Галерея</a></li>
+                <li><a href="adoption.html" class="nav-link">Усыновление</a></li>
+                <li><a href="care.html" class="nav-link active">Уход</a></li>
+                <li><a href="contact.html" class="nav-link">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="padding-top: 120px;">
+        <section class="hero" style="min-height: 60vh;">
+            <div class="hero-bg">
+                <img src="https://cataas.com/cat/says/Care?width=1200&height=400&fontSize=60&fontColor=white" alt="Care Hero" onerror="this.src='https://placekitten.com/1200/402'">
+            </div>
+            <div class="hero-content">
+                <h1 class="rainbow-text">Уход за котиками! 🐾</h1>
+                <p class="hero-subtitle">Все, что нужно знать для счастливой жизни вашего пушистого друга</p>
+            </div>
+        </section>
+
+        <section class="care-basics">
+            <div class="container">
+                <h2 class="section-title">Основы ухода</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="care-image">
+                            <img src="https://cataas.com/cat/says/Food?width=300&height=200&fontSize=30&fontColor=white" alt="Питание котиков" onerror="this.src='https://placekitten.com/300/200'">
+                        </div>
+                        <div class="feature-icon">🍽️</div>
+                        <h3>Правильное питание</h3>
+                        <p>Качественный корм, регулярное кормление и свежая вода - основа здоровья котика</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="care-image">
+                            <img src="https://cataas.com/cat/says/Clean?width=300&height=200&fontSize=30&fontColor=white" alt="Гигиена котиков" onerror="this.src='https://placekitten.com/301/200'">
+                        </div>
+                        <div class="feature-icon">🧼</div>
+                        <h3>Гигиена</h3>
+                        <p>Чистый лоток, расчесывание шерсти и уход за когтями</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="care-image">
+                            <img src="https://cataas.com/cat/says/Health?width=300&height=200&fontSize=30&fontColor=white" alt="Здоровье котиков" onerror="this.src='https://placekitten.com/302/200'">
+                        </div>
+                        <div class="feature-icon">🏥</div>
+                        <h3>Здоровье</h3>
+                        <p>Регулярные визиты к ветеринару и своевременные прививки</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="care-image">
+                            <img src="https://cataas.com/cat/says/Play?width=300&height=200&fontSize=30&fontColor=white" alt="Игры котиков" onerror="this.src='https://placekitten.com/303/200'">
+                        </div>
+                        <div class="feature-icon">🎾</div>
+                        <h3>Игры и активность</h3>
+                        <p>Физические и умственные упражнения для здорового развития</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feeding-guide">
+            <div class="container">
+                <h2 class="section-title">🍽️ Руководство по кормлению</h2>
+                <div style="background: rgba(255, 255, 255, 0.95); padding: 3rem; border-radius: 20px; margin: 2rem 0;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <div>
+                            <h3 style="color: #ff6b6b; margin-bottom: 1rem;">Котята (до 1 года)</h3>
+                            <ul style="line-height: 2;">
+                                <li>🍼 3-4 кормления в день</li>
+                                <li>🥛 Специальный корм для котят</li>
+                                <li>💧 Постоянный доступ к воде</li>
+                                <li>📏 Порции по возрасту и весу</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: #6bcf7f; margin-bottom: 1rem;">Взрослые коты (1-7 лет)</h3>
+                            <ul style="line-height: 2;">
+                                <li>🍽️ 2 кормления в день</li>
+                                <li>🥩 Качественный корм для взрослых</li>
+                                <li>⚖️ Контроль веса</li>
+                                <li>🚫 Избегать перекармливания</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 style="color: #9b59b6; margin-bottom: 1rem;">Пожилые коты (7+ лет)</h3>
+                            <ul style="line-height: 2;">
+                                <li>👴 Специальный корм для пожилых</li>
+                                <li>🍽️ Легкоусвояемая пища</li>
+                                <li>💊 Витамины по назначению ветеринара</li>
+                                <li>👁️ Контроль состояния здоровья</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grooming-guide">
+            <div class="container">
+                <h2 class="section-title">✨ Уход за внешностью</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🪮</div>
+                        <h3>Расчесывание</h3>
+                        <p><strong>Длинношерстные:</strong> ежедневно<br>
+                        <strong>Короткошерстные:</strong> 2-3 раза в неделю<br>
+                        Используйте специальные расчески и щетки</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛁</div>
+                        <h3>Купание</h3>
+                        <p>По необходимости (обычно редко)<br>
+                        Специальные шампуни для котов<br>
+                        Теплая вода и осторожность</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✂️</div>
+                        <h3>Когти</h3>
+                        <p>Подстригание раз в 2-3 недели<br>
+                        Когтеточки в доме<br>
+                        Специальные кусачки для когтей</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👂</div>
+                        <h3>Уши и глаза</h3>
+                        <p>Еженедельная проверка<br>
+                        Аккуратная чистка при загрязнении<br>
+                        Ватные диски и специальные средства</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="health-care">
+            <div class="container">
+                <h2 class="section-title">🏥 Забота о здоровье</h2>
+                <div style="background: rgba(255, 255, 255, 0.95); padding: 3rem; border-radius: 20px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+                        <div>
+                            <h3 style="color: #ff6b6b; margin-bottom: 1.5rem; font-size: 1.5rem;">📅 График прививок</h3>
+                            <div style="background: linear-gradient(45deg, #ff6b6b, #ffd93d); padding: 1.5rem; border-radius: 15px; color: white; margin-bottom: 2rem;">
+                                <p><strong>8-12 недель:</strong> Первая вакцинация</p>
+                                <p><strong>12-16 недель:</strong> Повторная вакцинация</p>
+                                <p><strong>Ежегодно:</strong> Плановые прививки</p>
+                                <p><strong>По показаниям:</strong> Дополнительные вакцины</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 style="color: #6bcf7f; margin-bottom: 1.5rem; font-size: 1.5rem;">🩺 Регулярные осмотры</h3>
+                            <div style="background: linear-gradient(45deg, #6bcf7f, #4d79ff); padding: 1.5rem; border-radius: 15px; color: white;">
+                                <p><strong>Котята:</strong> Каждые 2-3 месяца</p>
+                                <p><strong>Взрослые:</strong> Раз в год</p>
+                                <p><strong>Пожилые:</strong> Каждые 6 месяцев</p>
+                                <p><strong>При болезни:</strong> Немедленно к ветеринару</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 3rem;">
+                        <h3 style="color: #9b59b6; margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center;">⚠️ Признаки болезни</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                            <div style="background: #ffebee; padding: 1rem; border-radius: 10px; border-left: 4px solid #f44336;">
+                                <strong>Срочно к врачу:</strong><br>
+                                Рвота, понос, отказ от еды более суток, затрудненное дыхание
+                            </div>
+                            <div style="background: #fff3e0; padding: 1rem; border-radius: 10px; border-left: 4px solid #ff9800;">
+                                <strong>Наблюдение:</strong><br>
+                                Вялость, изменение аппетита, необычное поведение
+                            </div>
+                            <div style="background: #e8f5e8; padding: 1rem; border-radius: 10px; border-left: 4px solid #4caf50;">
+                                <strong>Плановый осмотр:</strong><br>
+                                Профилактические визиты согласно графику
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="play-and-exercise">
+            <div class="container">
+                <h2 class="section-title">🎮 Игры и развлечения</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎾</div>
+                        <h3>Активные игры</h3>
+                        <p>Мячики, дразнилки, лазерная указка<br>
+                        15-20 минут активности в день<br>
+                        Развивают охотничьи инстинкты</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>Интеллектуальные игры</h3>
+                        <p>Головоломки с лакомствами<br>
+                        Интерактивные игрушки<br>
+                        Стимулируют умственную активность</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏰</div>
+                        <h3>Пространство для игр</h3>
+                        <p>Домики и туннели<br>
+                        Высокие полки для лазания<br>
+                        Безопасная среда для исследований</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎭</div>
+                        <h3>Социализация</h3>
+                        <p>Общение с хозяином<br>
+                        Привыкание к гостям<br>
+                        Постепенное знакомство с новым</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tips-section">
+            <div class="container">
+                <h2 class="section-title">💡 Полезные советы</h2>
+                <div style="background: rgba(255, 255, 255, 0.95); padding: 3rem; border-radius: 20px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <div style="background: linear-gradient(135deg, #ff6b6b, #ffd93d); padding: 2rem; border-radius: 15px; color: white;">
+                            <h3 style="margin-bottom: 1rem;">🏠 Обустройство дома</h3>
+                            <ul>
+                                <li>Уберите опасные предметы</li>
+                                <li>Установите сетки на окна</li>
+                                <li>Создайте уютные места для отдыха</li>
+                                <li>Обеспечьте доступ к когтеточке</li>
+                            </ul>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #6bcf7f, #4d79ff); padding: 2rem; border-radius: 15px; color: white;">
+                            <h3 style="margin-bottom: 1rem;">📚 Обучение</h3>
+                            <ul>
+                                <li>Приучите к лотку с детства</li>
+                                <li>Научите откликаться на имя</li>
+                                <li>Установите режим дня</li>
+                                <li>Поощряйте хорошее поведение</li>
+                            </ul>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #9b59b6, #ff6b9d); padding: 2rem; border-radius: 15px; color: white;">
+                            <h3 style="margin-bottom: 1rem;">💖 Любовь и забота</h3>
+                            <ul>
+                                <li>Уделяйте время общению</li>
+                                <li>Изучайте характер питомца</li>
+                                <li>Будьте терпеливы и ласковы</li>
+                                <li>Создайте атмосферу безопасности</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2 class="rainbow-text">Готовы стать лучшим хозяином? 🌟</h2>
+                <p>С нашими советами ваш котик будет самым счастливым в мире!</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                    <a href="gallery.html" class="btn btn-primary">Выбрать котика</a>
+                    <a href="contact.html" class="btn btn-secondary">Задать вопрос</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌈 Котики Радуги</h3>
+                    <p>Мы помогаем котикам найти любящие семьи уже более 5 лет!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="gallery.html">Галерея</a></li>
+                        <li><a href="adoption.html">Усыновление</a></li>
+                        <li><a href="care.html">Уход за котиками</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>📧 info@kotkidugi.ru</p>
+                    <p>📱 +7 (123) 456-78-90</p>
+                    <p>📍 Москва, ул. Котячья, 123</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Котики Радуги. Все права защищены. Сделано с 💖 для котиков!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="nyan-effects.js"></script>
+</body>
+</html>

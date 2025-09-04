@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐱 Галерея котиков - Котики Радуги</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Нян-кеты, вылетающие из экрана -->
+    <div class="nyan-cats-container" id="nyanCatsContainer"></div>
+    
+    <!-- Лапки, вылезающие с боков -->
+    <div class="paws-container" id="pawsContainer"></div>
+    
+    <!-- Радужные частицы -->
+    <div class="rainbow-particles" id="rainbowParticles"></div>
+    
+    <!-- Блестки -->
+    <div class="sparkles" id="sparkles"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🌈 Котики Радуги 🐱</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="gallery.html" class="nav-link active">Галерея</a></li>
+                <li><a href="adoption.html" class="nav-link">Усыновление</a></li>
+                <li><a href="care.html" class="nav-link">Уход</a></li>
+                <li><a href="contact.html" class="nav-link">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="padding-top: 120px;">
+        <section class="hero" style="min-height: 60vh;">
+            <div class="hero-bg">
+                <img src="https://cataas.com/cat/says/Gallery?width=1200&height=400&fontSize=60&fontColor=white" alt="Gallery Hero" onerror="this.src='https://placekitten.com/1200/400'">
+            </div>
+            <div class="hero-content">
+                <h1 class="rainbow-text">Галерея наших котиков! 📸</h1>
+                <p class="hero-subtitle">Познакомьтесь с нашими пушистыми друзьями, которые ищут дом!</p>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="container">
+                <div class="gallery-grid">
+                    <div class="cat-card">
+                        <div class="cat-image">
+                            <img src="https://cataas.com/cat/cute?width=400&height=250" alt="Радужка" onerror="this.src='https://placekitten.com/400/250'">
+                            <div class="cat-emoji-overlay">🐱</div>
+                        </div>
+                        <div class="cat-info">
+                            <h3>Радужка</h3>
+                            <p>Очаровательная кошечка с радужной шерстью. Любит играть и обниматься.</p>
+                            <div class="cat-tags">
+                                <span class="tag">Игривая</span>
+                                <span class="tag">Ласковая</span>
+                                <span class="tag">2 года</span>
+                            </div>
+                            <a href="adoption.html" class="btn btn-primary">Усыновить</a>
+                        </div>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="cat-image">
+                            <img src="https://cataas.com/cat/orange?width=400&height=250" alt="Солнышко" onerror="this.src='https://placekitten.com/401/250'">
+                            <div class="cat-emoji-overlay">😸</div>
+                        </div>
+                        <div class="cat-info">
+                            <h3>Солнышко</h3>
+                            <p>Жизнерадостный кот, который всегда поднимет настроение своей улыбкой.</p>
+                            <div class="cat-tags">
+                                <span class="tag">Веселый</span>
+                                <span class="tag">Общительный</span>
+                                <span class="tag">3 года</span>
+                            </div>
+                            <a href="adoption.html" class="btn btn-primary">Усыновить</a>
+                        </div>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="cat-image">
+                            <img src="https://cataas.com/cat/white?width=400&height=250" alt="Сердечко" onerror="this.src='https://placekitten.com/402/250'">
+                            <div class="cat-emoji-overlay">😻</div>
+                        </div>
+                        <div class="cat-info">
+                            <h3>Сердечко</h3>
+                            <p>Влюбленная кошечка, которая подарит вам всю свою любовь и нежность.</p>
+                            <div class="cat-tags">
+                                <span class="tag">Романтичная</span>
+                                <span class="tag">Нежная</span>
+                                <span class="tag">1.5 года</span>
+                            </div>
+                            <a href="adoption.html" class="btn btn-primary">Усыновить</a>
+                        </div>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="cat-image">
+                            <img src="https://cataas.com/cat/small?width=400&height=250" alt="Удивлялка" onerror="this.src='https://placekitten.com/403/250'">
+                            <div class="cat-emoji-overlay">🙀</div>
+                        </div>
+                        <div class="cat-info">
+                            <h3>Удивлялка</h3>
+                            <p>Любопытный котик, который всему удивляется и исследует мир.</p>
+                            <div class="cat-tags">
+                                <span class="tag">Любопытный</span>
+                                <span class="tag">Активный</span>
+                                <span class="tag">6 месяцев</span>
+                            </div>
+                            <a href="adoption.html" class="btn btn-primary">Усыновить</a>
+                        </div>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="cat-image">
+                            <img src="https://cataas.com/cat/tabby?width=400&height=250" alt="Грустинка" onerror="this.src='https://placekitten.com/404/250'">
+                            <div class="cat-emoji-overlay">😿</div>
+                        </div>
+                        <div class="cat-info">
+                            <h3>Грустинка</h3>
+                            <p>Тихая и чувствительная кошечка, которая ждет понимающего хозяина.</p>
+                            <div class="cat-tags">
+                                <span class="tag">Тихая</span>
+                                <span class="tag">Чувствительная</span>
+                                <span class="tag">4 года</span>
+                            </div>
+                            <a href="adoption.html" class="btn btn-primary">Усыновить</a>
+                        </div>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="cat-image">
+                            <img src="https://cataas.com/cat/gray?width=400&height=250" alt="Сердитка" onerror="this.src='https://placekitten.com/405/250'">
+                            <div class="cat-emoji-overlay">😾</div>
+                        </div>
+                        <div class="cat-info">
+                            <h3>Сердитка</h3>
+                            <p>Независимая кошка с характером. Станет отличным компаньоном для опытного хозяина.</p>
+                            <div class="cat-tags">
+                                <span class="tag">Независимая</span>
+                                <span class="tag">Характерная</span>
+                                <span class="tag">5 лет</span>
+                            </div>
+                            <a href="adoption.html" class="btn btn-primary">Усыновить</a>
+                        </div>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="cat-image">
+                            <img src="https://cataas.com/cat/bengal?width=400&height=250" alt="Классик" onerror="this.src='https://placekitten.com/406/250'">
+                            <div class="cat-emoji-overlay">🐈</div>
+                        </div>
+                        <div class="cat-info">
+                            <h3>Классик</h3>
+                            <p>Спокойный и уравновешенный кот. Идеален для семьи с детьми.</p>
+                            <div class="cat-tags">
+                                <span class="tag">Спокойный</span>
+                                <span class="tag">Семейный</span>
+                                <span class="tag">7 лет</span>
+                            </div>
+                            <a href="adoption.html" class="btn btn-primary">Усыновить</a>
+                        </div>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="cat-image">
+                            <img src="https://cataas.com/cat/black?width=400&height=250" alt="Тенька" onerror="this.src='https://placekitten.com/407/250'">
+                            <div class="cat-emoji-overlay">🐈‍⬛</div>
+                        </div>
+                        <div class="cat-info">
+                            <h3>Тенька</h3>
+                            <p>Таинственная черная кошка с золотыми глазами. Очень умная и преданная.</p>
+                            <div class="cat-tags">
+                                <span class="tag">Умная</span>
+                                <span class="tag">Преданная</span>
+                                <span class="tag">3.5 года</span>
+                            </div>
+                            <a href="adoption.html" class="btn btn-primary">Усыновить</a>
+                        </div>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="cat-image">
+                            <img src="https://cataas.com/cat/fluffy?width=400&height=250" alt="Львенок" onerror="this.src='https://placekitten.com/408/250'">
+                            <div class="cat-emoji-overlay">🦁</div>
+                        </div>
+                        <div class="cat-info">
+                            <h3>Львенок</h3>
+                            <p>Пушистый кот с львиной гривой. Настоящий король среди котов!</p>
+                            <div class="cat-tags">
+                                <span class="tag">Пушистый</span>
+                                <span class="tag">Царственный</span>
+                                <span class="tag">4 года</span>
+                            </div>
+                            <a href="adoption.html" class="btn btn-primary">Усыновить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2 class="rainbow-text">Нашли своего котика? 💖</h2>
+                <p>Не откладывайте - заполните анкету на усыновление прямо сейчас!</p>
+                <a href="adoption.html" class="btn btn-large">Усыновить котика</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌈 Котики Радуги</h3>
+                    <p>Мы помогаем котикам найти любящие семьи уже более 5 лет!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="gallery.html">Галерея</a></li>
+                        <li><a href="adoption.html">Усыновление</a></li>
+                        <li><a href="care.html">Уход за котиками</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>📧 info@kotkidugi.ru</p>
+                    <p>📱 +7 (123) 456-78-90</p>
+                    <p>📍 Москва, ул. Котячья, 123</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Котики Радуги. Все права защищены. Сделано с 💖 для котиков!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="nyan-effects.js"></script>
+</body>
+</html>

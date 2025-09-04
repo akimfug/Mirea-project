@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📞 Контакты - Котики Радуги</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Нян-кеты, вылетающие из экрана -->
+    <div class="nyan-cats-container" id="nyanCatsContainer"></div>
+    
+    <!-- Лапки, вылезающие с боков -->
+    <div class="paws-container" id="pawsContainer"></div>
+    
+    <!-- Радужные частицы -->
+    <div class="rainbow-particles" id="rainbowParticles"></div>
+    
+    <!-- Блестки -->
+    <div class="sparkles" id="sparkles"></div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🌈 Котики Радуги 🐱</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="gallery.html" class="nav-link">Галерея</a></li>
+                <li><a href="adoption.html" class="nav-link">Усыновление</a></li>
+                <li><a href="care.html" class="nav-link">Уход</a></li>
+                <li><a href="contact.html" class="nav-link active">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="padding-top: 120px;">
+        <section class="hero" style="min-height: 60vh;">
+            <div class="hero-bg">
+                <img src="https://cataas.com/cat/says/Contact?width=1200&height=400&fontSize=50&fontColor=white" alt="Contact Hero" onerror="this.src='https://placekitten.com/1200/403'">
+            </div>
+            <div class="hero-content">
+                <h1 class="rainbow-text">Свяжитесь с нами! 📞</h1>
+                <p class="hero-subtitle">Мы всегда рады ответить на ваши вопросы о котиках</p>
+            </div>
+        </section>
+
+        <section class="contact-info">
+            <div class="container">
+                <h2 class="section-title">Наши контакты</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Телефон</h3>
+                        <p><strong>+7 (123) 456-78-90</strong><br>
+                        Ежедневно с 9:00 до 21:00<br>
+                        Бесплатные консультации</p>
+                        <a href="tel:+71234567890" class="btn btn-primary" style="margin-top: 1rem;">Позвонить</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📧</div>
+                        <h3>Email</h3>
+                        <p><strong>info@kotkidugi.ru</strong><br>
+                        Отвечаем в течение 24 часов<br>
+                        Подробные консультации</p>
+                        <a href="mailto:info@kotkidugi.ru" class="btn btn-secondary" style="margin-top: 1rem;">Написать</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📍</div>
+                        <h3>Адрес</h3>
+                        <p><strong>г. Москва</strong><br>
+                        ул. Котячья, дом 123<br>
+                        Метро "Котомайская"</p>
+                        <a href="#map" class="btn btn-primary" style="margin-top: 1rem;">На карте</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🕒</div>
+                        <h3>Режим работы</h3>
+                        <p><strong>Пн-Пт:</strong> 9:00 - 20:00<br>
+                        <strong>Сб-Вс:</strong> 10:00 - 18:00<br>
+                        <em>Приют работает ежедневно</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <div class="container">
+                <h2 class="section-title">Напишите нам</h2>
+                <div class="form-container">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Ваше имя *</label>
+                            <input type="text" id="contactName" name="contactName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">Email *</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactPhone">Телефон</label>
+                            <input type="tel" id="contactPhone" name="contactPhone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactSubject">Тема обращения *</label>
+                            <select id="contactSubject" name="contactSubject" required>
+                                <option value="">Выберите тему</option>
+                                <option value="adoption">Усыновление котика</option>
+                                <option value="care">Вопросы по уходу</option>
+                                <option value="volunteer">Волонтерство</option>
+                                <option value="donation">Пожертвования</option>
+                                <option value="general">Общие вопросы</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Сообщение *</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="6" required placeholder="Расскажите подробнее о вашем вопросе..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="urgency">Срочность</label>
+                            <select id="urgency" name="urgency">
+                                <option value="normal">Обычная</option>
+                                <option value="high">Высокая</option>
+                                <option value="urgent">Срочно!</option>
+                            </select>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <button type="submit" class="btn btn-large">Отправить сообщение 💌</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Наша команда</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">👩‍⚕️</div>
+                        <h3>Доктор Анна</h3>
+                        <p><strong>Главный ветеринар</strong><br>
+                        Опыт работы: 15 лет<br>
+                        Специализация: внутренние болезни котов<br>
+                        📧 anna@kotkidugi.ru</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧑‍💼</div>
+                        <h3>Михаил</h3>
+                        <p><strong>Координатор по усыновлению</strong><br>
+                        Поможет подобрать идеального котика<br>
+                        Консультации по адаптации<br>
+                        📧 mikhail@kotkidugi.ru</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👩‍🏫</div>
+                        <h3>Елена</h3>
+                        <p><strong>Специалист по поведению</strong><br>
+                        Коррекция поведения котов<br>
+                        Советы по воспитанию<br>
+                        📧 elena@kotkidugi.ru</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>Сергей</h3>
+                        <p><strong>Координатор волонтеров</strong><br>
+                        Организация помощи приюту<br>
+                        Волонтерские программы<br>
+                        📧 sergey@kotkidugi.ru</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="map" class="map-section">
+            <div class="container">
+                <h2 class="section-title">Как нас найти</h2>
+                <div style="background: rgba(255, 255, 255, 0.95); padding: 3rem; border-radius: 20px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                        <div>
+                            <h3 style="color: #ff6b6b; margin-bottom: 2rem; font-size: 1.5rem;">🗺️ Адрес и проезд</h3>
+                            <div style="background: linear-gradient(45deg, #ff6b6b, #ffd93d); padding: 2rem; border-radius: 15px; color: white; margin-bottom: 2rem;">
+                                <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>📍 г. Москва, ул. Котячья, 123</strong></p>
+                                <p><strong>🚇 Метро:</strong> Котомайская (5 минут пешком)</p>
+                                <p><strong>🚌 Автобус:</strong> №123, №456 (остановка "Котики")</p>
+                                <p><strong>🚗 На машине:</strong> Есть парковка</p>
+                            </div>
+                            <div style="background: linear-gradient(45deg, #6bcf7f, #4d79ff); padding: 1.5rem; border-radius: 15px; color: white;">
+                                <p><strong>💡 Подсказка:</strong> Мы находимся в розовом здании с большой вывеской "Котики Радуги"!</p>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- Имитация карты -->
+                            <div style="height: 300px; background: linear-gradient(45deg, #e3f2fd, #f3e5f5); border-radius: 15px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 4rem; margin-bottom: 1rem;">🗺️</div>
+                                    <p style="font-size: 1.2rem; color: #666; font-weight: bold;">Интерактивная карта</p>
+                                    <p style="color: #999;">ул. Котячья, 123</p>
+                                </div>
+                                <!-- Анимированные элементы карты -->
+                                <div style="position: absolute; top: 20px; left: 20px; font-size: 2rem; animation: float 3s ease-in-out infinite;">🏠</div>
+                                <div style="position: absolute; bottom: 20px; right: 20px; font-size: 1.5rem; animation: float 4s ease-in-out infinite; animation-delay: 1s;">🚇</div>
+                                <div style="position: absolute; top: 50%; left: 20px; font-size: 1.5rem; animation: float 3.5s ease-in-out infinite; animation-delay: 2s;">🚌</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-media">
+            <div class="container">
+                <h2 class="section-title">Мы в социальных сетях</h2>
+                <div class="features-grid" style="max-width: 800px; margin: 0 auto;">
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Instagram</h3>
+                        <p>@kotiki_radugi<br>
+                        Ежедневные фото наших котиков<br>
+                        Истории счастливых усыновлений</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👥</div>
+                        <h3>ВКонтакте</h3>
+                        <p>vk.com/kotiki_radugi<br>
+                        Новости приюта<br>
+                        Объявления о поиске дома</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📘</div>
+                        <h3>Facebook</h3>
+                        <p>fb.com/kotikiradugi<br>
+                        Статьи об уходе за котами<br>
+                        Истории волонтеров</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📺</div>
+                        <h3>YouTube</h3>
+                        <p>Котики Радуги TV<br>
+                        Видеоистории наших питомцев<br>
+                        Обучающие ролики</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="emergency-contacts">
+            <div class="container">
+                <div style="background: linear-gradient(45deg, #ff4757, #ff6b7a); color: white; padding: 2rem; border-radius: 20px; text-align: center;">
+                    <h3 style="font-size: 2rem; margin-bottom: 1rem;">🚨 Экстренные контакты</h3>
+                    <p style="font-size: 1.2rem; margin-bottom: 1rem;">Если вы нашли больного или травмированного котика:</p>
+                    <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                        <a href="tel:+71234567891" class="btn" style="background: white; color: #ff4757; font-weight: bold;">📞 Экстренная помощь: +7 (123) 456-78-91</a>
+                        <a href="mailto:emergency@kotkidugi.ru" class="btn" style="background: white; color: #ff4757; font-weight: bold;">📧 emergency@kotkidugi.ru</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌈 Котики Радуги</h3>
+                    <p>Мы помогаем котикам найти любящие семьи уже более 5 лет!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="gallery.html">Галерея</a></li>
+                        <li><a href="adoption.html">Усыновление</a></li>
+                        <li><a href="care.html">Уход за котиками</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>📧 info@kotkidugi.ru</p>
+                    <p>📱 +7 (123) 456-78-90</p>
+                    <p>📍 Москва, ул. Котячья, 123</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Котики Радуги. Все права защищены. Сделано с 💖 для котиков!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Анимация отправки
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '📤 Отправляем...';
+            submitBtn.disabled = true;
+            
+            // Имитация отправки
+            setTimeout(() => {
+                submitBtn.innerHTML = '✅ Сообщение отправлено!';
+                submitBtn.style.background = 'linear-gradient(45deg, #6bcf7f, #4d79ff)';
+                
+                // Показать сообщение об успехе
+                alert('💌 Спасибо за ваше сообщение! Мы ответим в ближайшее время.');
+                
+                // Сброс формы
+                setTimeout(() => {
+                    e.target.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                }, 3000);
+            }, 2000);
+        });
+
+        // Анимация плавающих элементов карты
+        document.addEventListener('DOMContentLoaded', function() {
+            const mapElements = document.querySelectorAll('[style*="animation: float"]');
+            mapElements.forEach((el, index) => {
+                el.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.2)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                el.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+    
+    <script src="nyan-effects.js"></script>
+</body>
+</html>

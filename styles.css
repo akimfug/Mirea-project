@@ -265,6 +265,21 @@ body {
     }
 }
 
+@keyframes fadeUpAndOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-20px) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.8);
+    }
+}
+
 /* Специальные эффекты для разных сторон */
 .paw-left img {
     clip-path: ellipse(70% 100% at 100% 50%);
@@ -950,7 +965,302 @@ section {
     box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
 }
 
-/* Адаптивность */
+/* Стили для страницы смешных котов */
+
+/* Сетка мемов */
+.memes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.meme-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.meme-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff0080, #ff8000, #ffff00, #80ff00, #00ff80, #0080ff, #8000ff, #ff0080);
+    background-size: 400% 400%;
+    animation: gradientShift 4s linear infinite;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.meme-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.meme-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.meme-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.meme-card:hover .meme-image img {
+    transform: scale(1.1);
+}
+
+.meme-text {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.meme-text h3 {
+    color: #ff00ff;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.meme-btn {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Генератор мемов */
+.generator-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.generator-form h3,
+.generated-meme h3 {
+    color: #ff00ff;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#memePreview {
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+    border-radius: 15px;
+    border: 3px dashed #ff00ff;
+}
+
+#memePreview img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Карточки с фактами */
+.facts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.fact-card {
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.fact-card.flipped .fact-front {
+    transform: rotateY(-180deg);
+}
+
+.fact-card.flipped .fact-back {
+    transform: rotateY(0deg);
+}
+
+.fact-front,
+.fact-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.fact-front {
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    color: white;
+}
+
+.fact-back {
+    background: linear-gradient(45deg, #ffff00, #ff8000);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.fact-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.fact-front h3,
+.fact-back h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Игра "Поймай котика" */
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.score {
+    color: #ff00ff;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+.timer {
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.game-area {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(45deg, rgba(255, 0, 255, 0.1), rgba(0, 255, 255, 0.1));
+    border: 3px solid #ff00ff;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-instructions {
+    text-align: center;
+    color: #333;
+}
+
+.game-instructions h3 {
+    color: #ff00ff;
+    margin-bottom: 1rem;
+}
+
+.game-active {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 0, 255, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+.game-cat {
+    position: absolute;
+    font-size: 3rem;
+    cursor: pointer;
+    animation: bounce 1s infinite alternate;
+    user-select: none;
+    z-index: 10;
+}
+
+.game-cat:hover {
+    transform: scale(1.2);
+}
+
+.catch-effect {
+    position: absolute;
+    font-size: 2rem;
+    animation: fadeUpAndOut 1s ease-out forwards;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.game-over {
+    text-align: center;
+    color: #333;
+}
+
+.game-over h3 {
+    color: #ff00ff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.game-over p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Адаптивность для смешных котов */
+@media (max-width: 768px) {
+    .generator-container {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+    
+    .memes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .facts-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-area {
+        height: 300px;
+    }
+    
+    .game-cat {
+        font-size: 2rem;
+    }
+}
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
@@ -986,5 +1296,63 @@ section {
     .form-container {
         padding: 2rem;
         margin: 1rem;
+    }
+    
+    /* Мобильная адаптация лапок */
+    .paw img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .paw-left {
+        left: -60px;
+    }
+    
+    .paw-right {
+        right: -60px;
+    }
+    
+    .paw-top {
+        top: -60px;
+    }
+    
+    .paw-bottom {
+        bottom: -60px;
+    }
+    
+    @keyframes pawSlideFromLeft {
+        0%, 85%, 100% { 
+            left: -60px; 
+        }
+        15%, 70% { 
+            left: 10px; 
+        }
+    }
+    
+    @keyframes pawSlideFromRight {
+        0%, 85%, 100% { 
+            right: -60px; 
+        }
+        15%, 70% { 
+            right: 10px; 
+        }
+    }
+    
+    @keyframes pawSlideFromTop {
+        0%, 85%, 100% { 
+            top: -60px; 
+        }
+        15%, 70% { 
+            top: 10px; 
+        }
+    }
+    
+    @keyframes pawSlideFromBottom {
+        0%, 85%, 100% { 
+            bottom: -60px; 
+        }
+        15%, 70% { 
+            bottom: 10px; 
+        }
     }
 }

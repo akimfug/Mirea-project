@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😹 Смешные коты - Котики Радуги</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Нян-кеты, вылетающие из экрана -->
+    <div class="nyan-cats-container" id="nyanCatsContainer"></div>
+    
+    <!-- Лапки, вылезающие с боков -->
+    <div class="paws-container" id="pawsContainer"></div>
+    
+    <!-- Радужные частицы -->
+    <div class="rainbow-particles" id="rainbowParticles"></div>
+    
+    <!-- Блестки -->
+    <div class="sparkles" id="sparkles"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🌈 Котики Радуги 🐱</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="gallery.html" class="nav-link">Галерея</a></li>
+                <li><a href="adoption.html" class="nav-link">Усыновление</a></li>
+                <li><a href="care.html" class="nav-link">Уход</a></li>
+                <li><a href="funny.html" class="nav-link active">Смешные коты</a></li>
+                <li><a href="contact.html" class="nav-link">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="padding-top: 120px;">
+        <section class="hero" style="min-height: 60vh;">
+            <div class="hero-bg">
+                <img src="https://cataas.com/cat/says/LOL?width=1200&height=400&fontSize=60&fontColor=yellow" alt="Funny Hero" onerror="this.src='https://placekitten.com/1200/404'">
+            </div>
+            <div class="hero-content">
+                <h1 class="rainbow-text">Смешные котики! 😹</h1>
+                <p class="hero-subtitle">Поднимем настроение с самыми забавными и милыми котиками!</p>
+            </div>
+        </section>
+
+        <!-- Мемы с котиками -->
+        <section class="memes-section">
+            <div class="container">
+                <h2 class="section-title">Мемы с котиками 😂</h2>
+                <div class="memes-grid">
+                    <div class="meme-card">
+                        <div class="meme-image">
+                            <img src="https://cataas.com/cat/says/I%20can%20haz%20cheezburger?width=400&height=300&fontSize=25&fontColor=white" alt="Мем кот" onerror="this.src='https://placekitten.com/400/300'">
+                        </div>
+                        <div class="meme-text">
+                            <h3>🍔 Классика</h3>
+                            <p>"I can haz cheezburger?" - вечная классика котиков!</p>
+                            <button class="btn btn-primary meme-btn" onclick="shareMeme(this)">Поделиться 📤</button>
+                        </div>
+                    </div>
+
+                    <div class="meme-card">
+                        <div class="meme-image">
+                            <img src="https://cataas.com/cat/says/Not%20Today!?width=400&height=300&fontSize=30&fontColor=red" alt="Мем кот" onerror="this.src='https://placekitten.com/401/300'">
+                        </div>
+                        <div class="meme-text">
+                            <h3>🙅‍♀️ Не сегодня!</h3>
+                            <p>Когда понедельник, а ты котик...</p>
+                            <button class="btn btn-primary meme-btn" onclick="shareMeme(this)">Поделиться 📤</button>
+                        </div>
+                    </div>
+
+                    <div class="meme-card">
+                        <div class="meme-image">
+                            <img src="https://cataas.com/cat/says/OMG?width=400&height=300&fontSize=40&fontColor=pink" alt="Мем кот" onerror="this.src='https://placekitten.com/402/300'">
+                        </div>
+                        <div class="meme-text">
+                            <h3>😱 OMG!</h3>
+                            <p>Когда увидел пустую миску...</p>
+                            <button class="btn btn-primary meme-btn" onclick="shareMeme(this)">Поделиться 📤</button>
+                        </div>
+                    </div>
+
+                    <div class="meme-card">
+                        <div class="meme-image">
+                            <img src="https://cataas.com/cat/says/Sleepy?width=400&height=300&fontSize=35&fontColor=blue" alt="Мем кот" onerror="this.src='https://placekitten.com/403/300'">
+                        </div>
+                        <div class="meme-text">
+                            <h3>😴 Хочу спать</h3>
+                            <p>18 часов сна в день - это норма!</p>
+                            <button class="btn btn-primary meme-btn" onclick="shareMeme(this)">Поделиться 📤</button>
+                        </div>
+                    </div>
+
+                    <div class="meme-card">
+                        <div class="meme-image">
+                            <img src="https://cataas.com/cat/says/YOLO?width=400&height=300&fontSize=40&fontColor=orange" alt="Мем кот" onerror="this.src='https://placekitten.com/404/300'">
+                        </div>
+                        <div class="meme-text">
+                            <h3>🔥 YOLO</h3>
+                            <p>You Only Live 9 times!</p>
+                            <button class="btn btn-primary meme-btn" onclick="shareMeme(this)">Поделиться 📤</button>
+                        </div>
+                    </div>
+
+                    <div class="meme-card">
+                        <div class="meme-image">
+                            <img src="https://cataas.com/cat/says/Boss?width=400&height=300&fontSize=30&fontColor=black" alt="Мем кот" onerror="this.src='https://placekitten.com/405/300'">
+                        </div>
+                        <div class="meme-text">
+                            <h3>😼 Босс</h3>
+                            <p>Кто тут главный в доме? Правильно!</p>
+                            <button class="btn btn-primary meme-btn" onclick="shareMeme(this)">Поделиться 📤</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Генератор мемов -->
+        <section class="meme-generator">
+            <div class="container">
+                <h2 class="section-title">Генератор мемов 🎨</h2>
+                <div class="generator-container">
+                    <div class="generator-form">
+                        <h3>Создай свой мем!</h3>
+                        <div class="form-group">
+                            <label for="memeText">Текст для мема:</label>
+                            <input type="text" id="memeText" placeholder="Введи смешной текст..." maxlength="30">
+                        </div>
+                        <div class="form-group">
+                            <label for="textColor">Цвет текста:</label>
+                            <select id="textColor">
+                                <option value="white">Белый</option>
+                                <option value="black">Черный</option>
+                                <option value="red">Красный</option>
+                                <option value="blue">Синий</option>
+                                <option value="green">Зеленый</option>
+                                <option value="yellow">Желтый</option>
+                                <option value="pink">Розовый</option>
+                                <option value="orange">Оранжевый</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-large" onclick="generateMeme()">Создать мем! 🎭</button>
+                    </div>
+                    <div class="generated-meme">
+                        <h3>Твой мем:</h3>
+                        <div id="memePreview">
+                            <img id="generatedMemeImg" src="https://cataas.com/cat/says/Your%20Meme?width=400&height=300&fontSize=30&fontColor=white" alt="Твой мем">
+                        </div>
+                        <button class="btn btn-secondary" onclick="downloadMeme()" style="margin-top: 1rem;">Скачать мем 📥</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Смешные факты -->
+        <section class="funny-facts">
+            <div class="container">
+                <h2 class="section-title">Смешные факты о котах 🤓</h2>
+                <div class="facts-container">
+                    <div class="fact-card" onclick="flipCard(this)">
+                        <div class="fact-front">
+                            <div class="fact-icon">😸</div>
+                            <h3>Факт #1</h3>
+                            <p>Нажми, чтобы узнать!</p>
+                        </div>
+                        <div class="fact-back">
+                            <h3>Кошачий массаж</h3>
+                            <p>Коты "месят" лапками не просто так - это напоминание о детстве, когда они массировали мамину грудь для молока!</p>
+                        </div>
+                    </div>
+
+                    <div class="fact-card" onclick="flipCard(this)">
+                        <div class="fact-front">
+                            <div class="fact-icon">😹</div>
+                            <h3>Факт #2</h3>
+                            <p>Нажми, чтобы узнать!</p>
+                        </div>
+                        <div class="fact-back">
+                            <h3>Кошачьи эмоции</h3>
+                            <p>Коты мяукают только для людей! Между собой они общаются мурлыканьем, шипением и языком тела.</p>
+                        </div>
+                    </div>
+
+                    <div class="fact-card" onclick="flipCard(this)">
+                        <div class="fact-front">
+                            <div class="fact-icon">🙀</div>
+                            <h3>Факт #3</h3>
+                            <p>Нажми, чтобы узнать!</p>
+                        </div>
+                        <div class="fact-back">
+                            <h3>Кошачий сон</h3>
+                            <p>Коты спят 12-18 часов в день. Это означает, что 70% своей жизни они проводят во сне!</p>
+                        </div>
+                    </div>
+
+                    <div class="fact-card" onclick="flipCard(this)">
+                        <div class="fact-front">
+                            <div class="fact-icon">😻</div>
+                            <h3>Факт #4</h3>
+                            <p>Нажми, чтобы узнать!</p>
+                        </div>
+                        <div class="fact-back">
+                            <h3>Кошачья память</h3>
+                            <p>У котов отличная память! Они могут помнить события до 10 лет, особенно если это связано с едой.</p>
+                        </div>
+                    </div>
+
+                    <div class="fact-card" onclick="flipCard(this)">
+                        <div class="fact-front">
+                            <div class="fact-icon">😿</div>
+                            <h3>Факт #5</h3>
+                            <p>Нажми, чтобы узнать!</p>
+                        </div>
+                        <div class="fact-back">
+                            <h3>Кошачьи усы</h3>
+                            <p>Усы кота такой же ширины, как и его тело. Так они определяют, пролезут ли в отверстие!</p>
+                        </div>
+                    </div>
+
+                    <div class="fact-card" onclick="flipCard(this)">
+                        <div class="fact-front">
+                            <div class="fact-icon">😾</div>
+                            <h3>Факт #6</h3>
+                            <p>Нажми, чтобы узнать!</p>
+                        </div>
+                        <div class="fact-back">
+                            <h3>Кошачье зрение</h3>
+                            <p>Коты не различают красный цвет, но видят в темноте в 6 раз лучше человека!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Интерактивная игра -->
+        <section class="cat-game">
+            <div class="container">
+                <h2 class="section-title">Поймай котика! 🎮</h2>
+                <div class="game-container">
+                    <div class="game-info">
+                        <div class="score">Счет: <span id="score">0</span></div>
+                        <div class="timer">Время: <span id="timer">30</span>с</div>
+                    </div>
+                    <div class="game-area" id="gameArea">
+                        <div class="game-instructions">
+                            <h3>🎯 Как играть:</h3>
+                            <p>Кликай по котикам, чтобы поймать их!</p>
+                            <p>У тебя есть 30 секунд!</p>
+                            <button class="btn btn-large" onclick="startGame()">Начать игру! 🚀</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2 class="rainbow-text">Поделись улыбкой! 😄</h2>
+                <p>Понравились наши смешные котики? Поделись с друзьями!</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                    <a href="gallery.html" class="btn btn-primary">Больше котиков</a>
+                    <a href="adoption.html" class="btn btn-secondary">Усыновить котика</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌈 Котики Радуги</h3>
+                    <p>Мы помогаем котикам найти любящие семьи уже более 5 лет!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="gallery.html">Галерея</a></li>
+                        <li><a href="adoption.html">Усыновление</a></li>
+                        <li><a href="care.html">Уход за котиками</a></li>
+                        <li><a href="funny.html">Смешные коты</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>📧 info@kotkidugi.ru</p>
+                    <p>📱 +7 (123) 456-78-90</p>
+                    <p>📍 Москва, ул. Котячья, 123</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Котики Радуги. Все права защищены. Сделано с 💖 для котиков!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="funny-cats.js"></script>
+    <script src="nyan-effects.js"></script>
+</body>
+</html>

@@ -37,14 +37,51 @@ function createNyanCat() {
     }, 10000);
 }
 
-// Создание лапок
+// Создание лапок с реальными изображениями
 function createPaw() {
     const container = document.getElementById('pawsContainer');
     if (!container) return;
     
     const paw = document.createElement('div');
     paw.className = 'paw';
-    paw.textContent = paws[Math.floor(Math.random() * paws.length)];
+    
+    // Создаем изображение лапки
+    const pawImg = document.createElement('img');
+    
+    // Разные типы изображений котиков для лапок
+    const pawTypes = [
+        'https://cataas.com/cat/cute?width=150&height=150',
+        'https://cataas.com/cat/orange?width=150&height=150', 
+        'https://cataas.com/cat/white?width=150&height=150',
+        'https://cataas.com/cat/tabby?width=150&height=150',
+        'https://cataas.com/cat/black?width=150&height=150',
+        'https://cataas.com/cat/gray?width=150&height=150',
+        'https://cataas.com/cat/fluffy?width=150&height=150',
+        'https://cataas.com/cat/small?width=150&height=150'
+    ];
+    
+    // Резервные изображения
+    const fallbackImages = [
+        'https://placekitten.com/150/150',
+        'https://placekitten.com/151/151',
+        'https://placekitten.com/152/152',
+        'https://placekitten.com/153/153',
+        'https://placekitten.com/154/154',
+        'https://placekitten.com/155/155',
+        'https://placekitten.com/156/156',
+        'https://placekitten.com/157/157'
+    ];
+    
+    const randomIndex = Math.floor(Math.random() * pawTypes.length);
+    const timestamp = Date.now() + Math.random(); // Уникальный параметр для обновления
+    
+    pawImg.src = pawTypes[randomIndex] + '&t=' + timestamp;
+    pawImg.alt = 'Котик выглядывает';
+    pawImg.onerror = function() {
+        this.src = fallbackImages[randomIndex];
+    };
+    
+    paw.appendChild(pawImg);
     
     // Случайное направление появления
     const sides = ['left', 'right', 'top', 'bottom'];
@@ -53,32 +90,65 @@ function createPaw() {
     
     // Случайная позиция вдоль стороны
     if (side === 'left' || side === 'right') {
-        paw.style.top = Math.random() * 80 + 10 + 'vh';
+        paw.style.top = Math.random() * (window.innerHeight - 200) + 100 + 'px';
     } else {
-        paw.style.left = Math.random() * 80 + 10 + 'vw';
+        paw.style.left = Math.random() * (window.innerWidth - 200) + 100 + 'px';
     }
     
     paw.style.animationDelay = Math.random() * 3 + 's';
+    paw.style.animationDuration = (Math.random() * 3 + 7) + 's';
     
-    // Обработчик клика
-    paw.addEventListener('click', function() {
+    // Обработчик клика с звуковым эффектом
+    paw.addEventListener('click', function(event) {
+        event.preventDefault();
         this.classList.add('clicked');
-        console.log('Лапка поймана! 🐾');
+        
+        // Добавляем эффект "мяуканья" 
+        console.log('🐾 Мяу! Котик спрятал лапку!');
+        
+        // Создаем временный текстовый эффект
+        const meowEffect = document.createElement('div');
+        meowEffect.textContent = '🐾 МЯУ!';
+        meowEffect.style.position = 'absolute';
+        meowEffect.style.left = event.clientX - 30 + 'px';
+        meowEffect.style.top = event.clientY - 30 + 'px';
+        meowEffect.style.color = '#ff00ff';
+        meowEffect.style.fontSize = '2rem';
+        meowEffect.style.fontWeight = 'bold';
+        meowEffect.style.textShadow = '0 0 10px rgba(255, 0, 255, 0.8)';
+        meowEffect.style.zIndex = '10002';
+        meowEffect.style.animation = 'fadeUpAndOut 1s ease-out forwards';
+        meowEffect.style.pointerEvents = 'none';
+        
+        document.body.appendChild(meowEffect);
+        
+        setTimeout(() => {
+            if (meowEffect.parentNode) {
+                meowEffect.parentNode.removeChild(meowEffect);
+            }
+        }, 1000);
+        
         setTimeout(() => {
             if (this.parentNode) {
                 this.parentNode.removeChild(this);
             }
-        }, 400);
+        }, 800);
+    });
+    
+    // Добавляем hover эффект с мяуканьем
+    paw.addEventListener('mouseenter', function() {
+        // Можно добавить тихий звук мяуканья здесь
+        console.log('😸 Котик заметил вас!');
     });
     
     container.appendChild(paw);
     
-    // Удаление через 8 секунд
+    // Удаление через 12 секунд (увеличили время из-за более медленной анимации)
     setTimeout(() => {
         if (paw.parentNode) {
             paw.parentNode.removeChild(paw);
         }
-    }, 8000);
+    }, 12000);
 }
 
 // Создание радужных частиц
@@ -130,17 +200,19 @@ function createSparkle() {
 
 // Инициализация эффектов
 function initNyanEffects() {
-    // Запуск анимаций
-    setInterval(createNyanCat, 2000);
-    setInterval(createPaw, 1500);
+    // Запуск анимаций с обновленными интервалами
+    setInterval(createNyanCat, 2500); // Немного реже нян-кеты
+    setInterval(createPaw, 3000); // Реже лапки, чтобы они были более заметными
     setInterval(createParticle, 500);
     setInterval(createSparkle, 800);
     
     // Создаем начальные элементы
     setTimeout(() => {
-        for (let i = 0; i < 3; i++) {
-            setTimeout(createNyanCat, i * 1000);
-            setTimeout(createPaw, i * 800);
+        for (let i = 0; i < 2; i++) { // Меньше начальных нян-кетов
+            setTimeout(createNyanCat, i * 1500);
+        }
+        for (let i = 0; i < 3; i++) { // Больше начальных лапок
+            setTimeout(createPaw, i * 1000);
         }
         for (let i = 0; i < 10; i++) {
             setTimeout(createParticle, i * 200);

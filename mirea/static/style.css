@@ -1,0 +1,47 @@
+
+
+input, button {
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+input {
+    border: 3px solid #ccc;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+input:focus {
+    background-color: aqua;
+}
+
+button {
+    padding: 5px;
+    border: 3px solid blue;
+    border-radius: 10px;
+    background-color: blue;
+    color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button:hover {
+    background-color: aliceblue;
+    color: blue;
+}
+
+#ContactForm {
+    width: 240px;
+    border: 3px solid purple;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 10px;
+    
+}

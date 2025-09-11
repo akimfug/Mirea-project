@@ -1,5 +1,6 @@
 const form = document.getElementById('ContactForm');
 const emailInput = document.getElementById('email');
+const phoneInput = document.getElementById('phone');
 const messageInput = document.getElementById('message');
 const emailError = document.getElementById('emailError');
 const messageError = document.getElementById('messageError');
@@ -16,6 +17,22 @@ function validateEmail() {
     } else {
         console.log('Email is invalid');
         showError(emailInput, 'Пожалуйста, введите корректный email.');
+    }
+}
+
+phoneInput.addEventListener('input', validatePhone);
+function validatePhone() {
+    console.log('Validating phone...');
+    const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+    
+    if (phonePattern.test(phoneInput.value)) {
+        console.log('Phone is valid');
+        removeError(phoneInput);
+        return true;
+    }
+    else {
+        console.log('Phone is invalid');
+        showError(phoneInput, 'Пожалуйста, введите корректный номер телефона в формате +7 (999) 999-99-99.');
     }
 }
 
@@ -38,36 +55,3 @@ function removeError(input) {
 
     input.style.borderColor = 'green';
 }
-
-
-
-// form.addEventListener('submit', function(event) {
-//     let valid = true;
-
-//     // Сброс сообщений об ошибках
-//     emailError.textContent = '';
-//     messageError.textContent = '';
-
-//     // Проверка email
-//     if (!validateEmail(emailInput.value)) {
-//         emailError.textContent = 'Пожалуйста, введите корректный email.';
-//         valid = false;
-//     }
-    
-//     // Проверка сообщения
-//     if (messageInput.value.trim() === '') {
-//         messageError.textContent = 'Сообщение не может быть пустым.';
-//         valid = false;
-//     }
-    
-//     // Если форма не валидна, предотвращаем отправку
-//     if (!valid) {
-//         event.preventDefault();
-//     }
-// });
-
-// // Дополнительная функция для очистки формы после успешной отправки
-// form.addEventListener('reset', function() {
-//     emailError.textContent = '';
-//     messageError.textContent = '';
-// });
